@@ -18,12 +18,13 @@
         };
 
 
+    /*
     if (navigator.userAgent.match(/iPhone/i)) {
         initialize();
-
         document.addEventListener("touchstart", gestureStart, false);
         document.addEventListener("touchend", gestureEnd, false);
     }
+    */
 })(document);
 
 function myFormFunc() {
@@ -31,12 +32,14 @@ function myFormFunc() {
     var lastName = document.getElementById("inputLastName").value;
     var email = document.getElementById("inputEmail1").value;
     var questions = document.getElementById("inputTextarea1").value;
+
     //  check for null
     if (!firstName || !lastName || !email || !questions)
     {
         alert("Error With User Data!\nPlease try again");
         return;
     }
+
     console.log(firstName + ", " + lastName + ", " + email + "\n" + questions);
     alert("Thanks For The Message!");
 }
