@@ -27,5 +27,10 @@
 })(document);
 
 function myFormFunc() {
+    var firstName = document.getElementById("inputFirstName").value;
+    var lastName = document.getElementById("inputLastName").value;
+    var email = document.getElementById("inputEmail").value;
+    var questions = document.getElementById("inputTextarea1").value;
+    console.log(firstName + ", " + lastName + ", " + email + "\n" + questions);
     alert("Thanks For The Message!");
 }
