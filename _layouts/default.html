@@ -18,11 +18,10 @@
         window.onload = function () {
             document.getElementById('contact-form').addEventListener('submit', function (event) {
                 event.preventDefault();
-                // generate a five digit number for the contact_number variable
-                // these IDs from the previous steps
+                console.log('listener triggerd');    
                 emailjs.sendForm('contact_service', 'ziot_template', this)
                     .then(function () {
-                        console.log('SUCCESS!');
+                        console.log('SUCCESS!');    
                     }, function (error) {
                         console.log('FAILED...', error);
                     });
