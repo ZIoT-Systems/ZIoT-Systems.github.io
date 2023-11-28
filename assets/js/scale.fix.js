@@ -25,3 +25,7 @@
         document.addEventListener("touchend", gestureEnd, false);
     }
 })(document);
+
+function myFormFunc() {
+    alert("Thanks For The Message!");
+}
