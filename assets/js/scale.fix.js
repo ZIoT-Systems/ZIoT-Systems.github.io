@@ -29,7 +29,7 @@
 function myFormFunc() {
     var firstName = document.getElementById("inputFirstName").value;
     var lastName = document.getElementById("inputLastName").value;
-    var email = document.getElementById("inputEmail").value;
+    var email = document.getElementById("inputEmail1").value;
     var questions = document.getElementById("inputTextarea1").value;
     //  check for null
     if (!firstName || !lastName || !email || !questions)
