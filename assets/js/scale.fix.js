@@ -31,6 +31,12 @@ function myFormFunc() {
     var lastName = document.getElementById("inputLastName").value;
     var email = document.getElementById("inputEmail").value;
     var questions = document.getElementById("inputTextarea1").value;
+    //  check for null
+    if (!firstName || !lastName || !email || !questions)
+    {
+        alert("Error With User Data!\nPlease try again");
+
+    }
     console.log(firstName + ", " + lastName + ", " + email + "\n" + questions);
     alert("Thanks For The Message!");
 }
