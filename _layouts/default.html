@@ -79,9 +79,280 @@
                 <label for="exampleFormControlTextarea1">Additional Questions</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
-            </form>
+        </form>
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>
+
+    <br>
+    <br>
+    <br>
+
+    ﻿<!DOCTYPE html>
+
+    <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        {% load static %}
+        <title>ZIoT Systems</title>
+        <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/logoZZICO.ico">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'iotsite/style.css' %}" />
+        <script type="text/javascript" src="{% static 'iotsite/scripts.js' %}"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </head>
+
+
+    <body>
+
+        <nav class="navbar fixed-top navbar-expand-lg navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href={% url 'home' %}>
+                <!-- Might be an issue with token, since this repo is private-->
+                <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/logoZZNOBG.png" alt="..." height="95">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span> <!-- Icon here -->
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href={% url 'home' %}>Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href={% url 'about' %}>About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href={% url 'store' %}>Online Store</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href={% url 'contact' %}>Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href={% url 'device-index' %}>Device Search</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Learn More
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href={% url 'how-it-works' %}>How it Works</a>
+                            <a class="dropdown-item" href={% url 'demo' %}>View Live Demo</a>
+                            <a class="dropdown-item" href={% url 'contact' %}>Request For Quote</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <section id="big-text">
+            <div class="container">
+                <h1 style="font-size:30px;">Seamless. Intuitive. Empowering.</h1>
+                <h1 style="font-size:30px;">Plug-And-Play</h1>
+                <h1 style="font-size:30px;">Advanced Monitoring Solutions</h1>
+            </div>
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-7">
+                        <p>
+                            At ZIoT Systems, our advanced monitoring solutions redefine ease and effectiveness.
+                            Our <b>condition monitoring system</b> ensures effortless 24/7 surveillance of every equipment facet within your facility.
+                            Featuring modern and user-friendly analysis software, setting alerts becomes a breeze, catering to both vibration experts and novices alike.
+                            <br>
+                            <br>
+                            For those seeking an unparalleled depth of functionality, our platform goes beyond the basics.
+                            ZIoT empowers true experts, enabling them to <b>detect potential defects early on</b>, safeguarding both equipment and operations from unforeseen downtime.
+                            Priced competitively, our system offers exceptional value, with plug-and-play simplicity designed into its core.
+                            Experience the ease of setup – <b>monitor your equipment within minutes, not hours</b>. Embrace the future of monitoring with ZIoT Systems.
+                        </p>
+                    </div>
+                    <div class="col-md-5">
+                        <img height="450" src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/Untitled%20design.png">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="bg-light py-5">
+            <div class="container">
+                <h2 class="text-center">Our Products</h2>
+                <div class="row">
+                    <!-- Add your product cards here -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img height="400" src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/device_cropped.png" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Fully-Assembled ZIoT Client</h5>
+                                <p class="card-text">Industrial Client Devices for Your Production Needs</p>
+                                <a href={% url 'product' product_id=1 %} class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- Add more product cards as needed -->
+                        <div class="card">
+                            <img height="400" src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/client-pcb.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">ZIoT Client Sensor</h5>
+                                <p class="card-text">Sensor Nodes To Add To Your System</p>
+                                <a href={% url 'product' product_id=2 %} class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- Add more product cards as needed -->
+                        <div class="card">
+                            <img height="400" src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/client-pcb.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Server\Client Firmware</h5>
+                                <p class="card-text">Use Our Software To Save Time And Cost</p>
+                                <a href={% url 'product' product_id=3 %} class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <br>
+
+        <div id="accordion">
+            <div class="container text-center">
+                <h1>THE ZIOT DIFFERENCE</h1>
+            </div>
+            <br>
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <h4>Plug-And-Play</h4>
+                    </button>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        At ZIoT Systems, we believe in making advanced technology accessible to all. That's why our innovative solutions are designed with you in mind – effortless to integrate and simple to use. Experience the power of plug-and-play functionality, where setup is a breeze, and you can start monitoring your equipment within minutes, not hours
+                        No need for extensive training or technical expertise. Our Plug-and-Play approach ensures that you can harness the full potential of our advanced monitoring solutions right from the get-go. Stay ahead of the curve with ZIoT Systems – where cutting-edge technology meets user-friendly simplicity. Your journey to smarter, more efficient operations starts here
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <h4>Industrial Design</h4>
+                    </button>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                        Meticulously crafted to meet the robust demands of industrial environments, our solutions seamlessly blend form and function. From cutting-edge aesthetics to rugged durability, our industrial design sets the standard for innovation.
+                        Embrace technology that not only performs but also enhances the visual and tactile experience. Our industrial design is a testament to precision and reliability, ensuring that your monitoring solutions don't just meet expectations – they exceed them. Elevate your workspace with ZIoT Systems – where industrial design meets unparalleled performance.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <h4>Save Time And Cost</h4>
+                    </button>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                        Time is money, and at ZIoT Systems, we understand the value of both. Our solutions are engineered to streamline your operations, saving you precious time and costs. Experience the ultimate in efficiency with real-time monitoring that provides instant insights, allowing you to make informed decisions without delay.
+                        Gone are the days of costly downtime and resource-intensive processes. ZIoT Systems is your partner in maximizing productivity while minimizing expenses. Our commitment to saving you time and cost is embedded in every aspect of our advanced monitoring solutions. Join us in reshaping the future of efficiency.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingFour">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            <h4>Expert Support</h4>
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                    <div class="card-body">
+                        We recognize that your success is our success. That's why we provide expert support to guide you at every stage of your journey. Our dedicated team of professionals is committed to ensuring that you get the most out of our advanced monitoring solutions.
+                        Whether you're setting up, troubleshooting, or exploring new features, our experts are just a message or call away. Benefit from personalized assistance and industry insights that empower you to harness the full potential of our technology. Elevate your experience with ZIoT Systems – where expert support is not just a service but a commitment to your success
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+        <section id="features" class="bg">
+            <div class="container text-center">
+                <h1>Features and Benefits</h1>
+            </div>
+            <div class="container">
+                <div class="row ">
+                    <div class="col-lg-3">
+                        <img height="165" src="https://thenounproject.com/api/private/icons/316759/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0">
+                        <p>Fast Time To Market</p>
+                    </div>
+                    <div class="col-lg-3">
+                        <img height="165" src="https://thenounproject.com/api/private/icons/5652653/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0">
+                        <p>Quick Plug and Play</p>
+                    </div>
+                    <div class="col-lg-3">
+                        <img height="165" src="https://thenounproject.com/api/private/icons/4814680/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0">
+                        <p>Extensive Device Ecosystem</p>
+                    </div>
+                    <div class="col-lg-3">
+                        <img height="165" src="https://thenounproject.com/api/private/icons/3159052/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0">
+                        <p>Informative Documation and Communtiy</p>
+                    </div>
+                </div>
+                <div class="container text-center">
+                    <a class="btn btn-primary btn-lg" href="{% url 'contact' %}">Request Demo</a>
+                </div>
+            </div>
+        </section>
+
+        <br>
+        <br>
+        <br>
+
+        <!-- About Section -->
+        <section id="about" class="bg-light py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h2>About Us</h2>
+                        <p>ZIoT Systems is a team of dedicated experts with diverse backgrounds in IoT, engineering, software development, and design. We bring together a wealth of knowledge and experience to deliver tailor-made solutions that address the unique needs of our clients. </p>
+                    </div>
+                    <div class="col-lg-6">
+                        <h2>What We Do</h2>
+                        <p> Our core focus is on developing end-to-end IoT solutions that streamline operations, reduce costs, and enhance productivity. Whether you're a large enterprise seeking to optimize your supply chain or a homeowner looking to make your living space more intelligent, we have the expertise to make it happen. </p>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <a href={% url 'demo' %} class="btn btn-primary btn-lg">View Live System Demo</a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                <div class="col-md-4 d-flex align-items-center">
+                    <span class="mb-3 mb-md-0 text-muted">Copyright 2023 ZIoT Automation Systems</span>
+                </div>
+
+                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                    <li class="ms-3">
+                        <a class="text-muted" href="https://www.linkedin.com/company/98969203/admin/feed/posts/?feedType=following">
+                            <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" height="26">
+                        </a>
+                    </li>
+                </ul>
+            </footer>
+        </div>
 
         <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
         {% if site.google_analytics %}
@@ -95,5 +366,5 @@
         </script>
         {% endif %}
 
-</body>
+    </body>
 </html>
