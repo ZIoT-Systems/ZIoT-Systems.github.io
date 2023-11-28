@@ -35,7 +35,7 @@ function myFormFunc() {
     if (!firstName || !lastName || !email || !questions)
     {
         alert("Error With User Data!\nPlease try again");
-
+        return;
     }
     console.log(firstName + ", " + lastName + ", " + email + "\n" + questions);
     alert("Thanks For The Message!");
