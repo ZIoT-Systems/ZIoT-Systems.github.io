@@ -17,6 +17,14 @@
     <script type="text/javascript">
         window.onload = function () {
             document.getElementById('contact-form').addEventListener('submit', function (event) {
+                var firstName = document.getElementById("inputFirstName").value;
+                var lastName = document.getElementById("inputLastName").value;
+                var email = document.getElementById("inputEmail1").value;
+                //  check for null
+                if (!firstName || !lastName || !email) {
+                    alert("Error With User Data!\nPlease try again");
+                    return;
+                }
                 event.preventDefault();
                 console.log('listener triggerd');    
                 emailjs.sendForm('service_nr6kcbi', 'ziot_template', this)
@@ -126,7 +134,7 @@
     </section>
 
     <br>
-    <br>
+    <br>    
     <br>
 
     <div class="container text-center">
