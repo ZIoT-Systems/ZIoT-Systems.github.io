@@ -1,5 +1,5 @@
-layout: page
-title: "Test"
-permalink: https://ziot-systems.github.io/test/
-
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+<body>
 Hello World
+</body>
