@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="icon" href="https://raw.githubusercontent.com/ZIoT-Systems/ZIoT-Systems.github.io/main/assets/img/logoZZ.png">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWQ5MWZHPH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-JWQ5MWZHPH');
+    </script>
+    <title>ZIoT Systems 2024</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#topHome">
+            <!-- Might be an issue with token, since this repo is private-->
+            <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/logoZZNOBG.png" alt="..." height="95">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span> <!-- Icon here -->
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#topHome">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#aboutUsAnchor">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#features">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#demoAnchor">Request Demo</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <br>
+    <h1>Coming Soon!</h1>
+    <br>
+
+    <!-- Footer -->
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <span class="mb-3 mb-md-0 text-muted">Copyright 2024 ZIoT Automation Systems</span>
+                <span class="mb-3 mb-md-0 text-muted">Warminster, PA 18974, USA</span>
+            </div>
+
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-3">
+                    <a class="text-muted" href="https://www.linkedin.com/company/98969203/admin/feed/posts/?feedType=following">
+                        <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" height="26">
+                    </a>
+                </li>
+                <li class="ms-3">
+                    <a class="text-muted" href="https://www.instagram.com/ziotsystems">
+                        <img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-1024.png" height="26">
+                    </a>
+                </li>
+            </ul>
+        </footer>
+    </div>
+
+    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+    {% if site.google_analytics %}
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', '{{ site.google_analytics }}', 'auto');
+      ga('send', 'pageview');
+    </script>
+    {% endif %}
+
+</body>
+</html>
