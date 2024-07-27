@@ -4,3 +4,6 @@ description:
 show_downloads: true
 google_analytics: G-JWQ5MWZHPH
 theme: jekyll-theme-minimal
+
+plugins:
+  - jekyll-sitemap
