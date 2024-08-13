@@ -5,6 +5,7 @@ show_downloads: true
 google_analytics: G-JWQ5MWZHPH
 theme: jekyll-theme-minimal
 pages:  https://ziot-systems.github.io/
+encoding: utf-8
 
 plugins:
   - jekyll-sitemap
