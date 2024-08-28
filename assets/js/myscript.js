@@ -1,1 +1,1 @@
-Console.log("hello from loaded js")
+console.log("hello from loaded js")
