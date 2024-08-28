@@ -2,6 +2,6 @@ console.log("hello from loaded js")
 
 
 function plcOnClick() {
-    let newWin = window.open("PLC Integration", "hello", "width=200,height=200");
-    newWin.document.write("works great with PLCs!");
+    let newWin = window.open("/", "hello", "width=200,height=200");
+    newWin.document.write("ZIoT Systems offers an advanced yet straightforward solution for integrating with your Programmable Logic Controllers (PLCs).");
 }
