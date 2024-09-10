@@ -1,47 +1,38 @@
 @import "jekyll-theme-minimal";
-/* should use js or similar here */
 
+/* should use js or similar here */
+/*
 .ft-img1:hover {
-    /* Start the shake animation and make the animation last for 0.5 seconds */
     animation: shake 0.5s;
-    /* When the animation is finished, start again */
     animation-iteration-count: infinite;
 }
 
 .ft-img2:hover {
-    /* Start the shake animation and make the animation last for 0.5 seconds */
     animation: shake 0.5s;
-    /* When the animation is finished, start again */
     animation-iteration-count: infinite;
 }
 
 .ft-img3:hover {
-    /* Start the shake animation and make the animation last for 0.5 seconds */
     animation: shake 0.5s;
-    /* When the animation is finished, start again */
     animation-iteration-count: infinite;
 }
 
 .ft-img4:hover {
-    /* Start the shake animation and make the animation last for 0.5 seconds */
     animation: shake 0.5s;
-    /* When the animation is finished, start again */
     animation-iteration-count: infinite;
 }
 
 .ft-img5:hover {
-    /* Start the shake animation and make the animation last for 0.5 seconds */
     animation: shake 0.5s;
-    /* When the animation is finished, start again */
     animation-iteration-count: infinite;
 }
 
 .ft-img6:hover {
-    /* Start the shake animation and make the animation last for 0.5 seconds */
     animation: shake 0.5s;
-    /* When the animation is finished, start again */
     animation-iteration-count: infinite;
 }
+
+*/
 
 .landing-img:hover {
     transform: scale(2);
