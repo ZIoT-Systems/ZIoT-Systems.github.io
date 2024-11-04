@@ -34,6 +34,13 @@
 
 */
 
+/*
+    below is a working 'zoom' on hover
+    disabled for now
+*/
+
+/*
+
 .landing-img:hover {
     transform: scale(1.5);
 }
@@ -83,3 +90,5 @@
         transform: translate(1px, -2px) rotate(-1deg);
     }
 }
+
+    */
