@@ -1,6 +1,6 @@
 var i = 0;
 var txt = 'Advanced Industrial Monitoring'; /* The text */
-var speed = 100; 
+var speed = 200; 
 
 function typeWriter() {
     if (i < txt.length) {
@@ -11,6 +11,6 @@ function typeWriter() {
     else {
         document.getElementById("typer1").innerHTML = "";
         i = 0;
-        setTimeout(typeWriter, speed);
+        setTimeout(typeWriter, 7000);
     }
 }
