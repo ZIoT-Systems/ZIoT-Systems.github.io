@@ -8,4 +8,9 @@ function typeWriter() {
         i++;
         setTimeout(typeWriter, speed);
     }
+    else {
+        document.getElementById("typer1").innerHTML = "";
+        i = 0;
+        setTimeout(typeWriter, speed);
+    }
 }
