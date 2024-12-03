@@ -24,7 +24,7 @@ function typeWriter() {
     }
     else {
         i = -1;
-        speed = 10000;
+        speed = 5000;
     }
     setTimeout(typeWriter, speed);
 }
