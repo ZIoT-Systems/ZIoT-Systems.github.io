@@ -8,7 +8,7 @@ var all_txt = [
 
 function typeWriter() {
     var txt = all_txt[str_idx];    
-    var speed = 100;
+    var speed = 70;
     if (txt === undefined || txt === null) {
         str_idx = 0;
         txt = all_txt[str_idx];
@@ -28,7 +28,7 @@ function typeWriter() {
     }
     else {
         i = -1;
-        speed = 5000;
+        speed = 2500;
     }
     setTimeout(typeWriter, speed);
 }
