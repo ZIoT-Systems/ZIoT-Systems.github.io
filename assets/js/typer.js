@@ -12,7 +12,7 @@ function typeWriter() {
     if (i == -1) {
         document.getElementById("typer1").innerHTML = "";
         i = 0;
-        if (str_idx < 4)
+        if (str_idx < 3)
             str_idx++;
         else
             str_idx = 0;
