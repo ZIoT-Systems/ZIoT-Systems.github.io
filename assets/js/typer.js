@@ -3,8 +3,7 @@ var str_idx = 0;
 var all_txt = [
     'Advanced Industrial Monitoring',
     'Empowering Smarter Operations',
-    'Real-Time Data, Real Results',
-    'Insightful. Reliable. Scalable.',
+    'Insightful, Reliable, Scalable.',
    ]; 
 
 function typeWriter() {
