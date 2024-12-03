@@ -3,12 +3,17 @@ var str_idx = 0;
 var all_txt = [
     'Advanced Industrial Monitoring',
     'Empowering Smarter Operations',
-    'Insightful, Reliable, Scalable.',
+    'Insightful, Reliable, Scalable',
    ]; 
 
 function typeWriter() {
     var txt = all_txt[str_idx];    
     var speed = 100;
+    if (txt === undefined || txt === null) {
+        str_idx = 0;
+        txt = all_txt[str_idx];
+    }
+
     if (i == -1) {
         document.getElementById("typer1").innerHTML = "";
         i = 0;
