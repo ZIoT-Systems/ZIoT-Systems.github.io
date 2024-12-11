@@ -1,0 +1,228 @@
+﻿
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="HFyoEDA--0LBZ_O5xisicBesk80_uFlym5rnF2i-D3I" />
+    <meta name="keywords" content="ZIoT Systems, IoT Monitoring Systems, IoT Automation Systems" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/scss" src="{{ "/assets/css/style.scss" | relative_url }}" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/logoZZ.ico">
+    <!-- Bootstrap-->
+    <!-- Check out https://georgetown-scientific.com/ -->
+    <!--Emailjs -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('HcZJ8F43t5hLFT5FI');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
+                var firstName = document.getElementById("inputFirstName").value;
+                var lastName = document.getElementById("inputLastName").value;
+                var email = document.getElementById("inputEmail1").value;
+                //  check for null
+                if (!firstName || !lastName || !email) {
+                    alert("Error With User Data!\nPlease try again");
+                    return;
+                }
+                event.preventDefault();
+                console.log('listener triggerd');
+                emailjs.sendForm('service_nr6kcbi', 'ziot_template', this)
+                    .then(function () {
+                        console.log('SUCCESS!');
+                        alert("Thank You!\n We Will Respond Shortly");
+                    }, function (error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWQ5MWZHPH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-JWQ5MWZHPH');
+    </script>
+    <title>ZIoT Systems 2024</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+<body class="container-fluid">
+    <!-- Write-up a how to use section -->
+    <!-- See https://www.frequentlyaskedai.com/ for a good example -->
+    <nav class="navbar navbar-expand-lg navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="https://ziot-systems.github.io/">
+            <!-- Might be an issue with token, since this repo is private-->
+            <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/logoZZNOBG.png" alt="..." height="95">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span> <!-- Icon here -->
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link font-weight-bold" href="https://ziot-systems.github.io/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" href="https://ziot-systems.github.io/#aboutUsAnchor">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" href="https://ziot-systems.github.io/#how-to-use">Usage</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" href="https://ziot-systems.github.io/#features">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" href="#demoAnchor">Get Device</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" href="https://ziot-systems.github.io/customapps">Custom Applications</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" href="https://ziot-systems.github.io/blog">Blog</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <br>
+    <br>
+
+    <!-- Can use a card layout for the blogs -->
+
+    <section id="how-to-use" class="bg">
+        <div class="container text-center">
+            <h1 class="font-italic">
+                Interfacing a ZIoT Client Device with a Custom Material Cutting CNC Machine
+            </h1>
+            <br>
+            <br>
+
+            <p>
+                In today’s manufacturing landscape, the integration of IoT solutions with custom machinery has become crucial for enhancing efficiency and productivity. 
+                ZIoT Systems is proud to showcase a real-world example of how our client device was successfully interfaced with a custom material-cutting CNC machine, revolutionizing the way machine data is collected and utilized.
+
+                Understanding the Challenge
+                The custom CNC machine in this project was designed to cut specialized materials with high precision. 
+                However, its legacy control system lacked connectivity, making it difficult to monitor operational metrics such as cutting speed, material usage, and maintenance schedules. This gap in connectivity led to inefficiencies, as operators had to manually gather and analyze data, resulting in potential downtime and delayed decision-making.
+
+                Enter the ZIoT Client Device
+                Our ZIoT client device served as the bridge between the CNC machine and modern IoT infrastructure. Equipped with advanced communication protocols and adaptable interfacing capabilities, it enabled seamless data transfer from the machine to the ZIoT dashboard. Here’s how we achieved it:
+
+                Custom Interface Development
+                The CNC machine’s existing control system was equipped with limited digital I/O ports and lacked standard communication protocols. To overcome this, we designed a custom interface to connect the ZIoT client device to the machine’s controller. This included mapping input/output signals for real-time data acquisition.
+
+                Sensor Integration
+                To expand monitoring capabilities, additional sensors were installed on the CNC machine. These sensors tracked critical parameters such as vibration, tool wear, and ambient temperature, providing a holistic view of the machine’s performance.
+
+                Firmware Optimization
+                The ZIoT client device firmware was tailored to process and relay the CNC machine’s operational data efficiently. This included implementing edge-computing capabilities to filter and prioritize data before transmission, reducing network load and ensuring critical alerts were delivered promptly.
+
+                Data Visualization and Analytics
+                Once the data was transmitted to the ZIoT dashboard, it was visualized through intuitive graphs and real-time analytics tools. Key performance indicators (KPIs) such as uptime, productivity rates, and predictive maintenance alerts were easily accessible to operators and decision-makers.
+
+                Results and Benefits
+                The integration of the ZIoT client device with the CNC machine yielded remarkable results:
+
+                Enhanced Efficiency: Real-time monitoring enabled quick adjustments to machine parameters, optimizing material usage and reducing waste.
+                Predictive Maintenance: Early detection of potential issues, such as tool wear, minimized unplanned downtime and extended machine life.
+                Data-Driven Decisions: Operators gained valuable insights through detailed analytics, empowering them to make informed decisions to enhance production workflows.
+                Scalability: The solution can be replicated across additional CNC machines, ensuring scalability for future growth.
+                Looking Ahead
+                This project highlights the versatility and power of ZIoT Systems in transforming legacy machinery into smart, connected devices. By interfacing our client device with a custom CNC machine, we demonstrated how IoT technology can unlock new levels of efficiency and productivity.
+
+                Are you facing challenges with integrating your machinery into a connected ecosystem? Contact us at ZIoT Systems to learn how we can help you bring your vision to life with our tailored IoT solutions.
+            </p>
+        </div>
+    </section>
+
+    <br>
+    <br>
+
+    <section class="bg" id="demoAnchor">
+        <br>
+        <div class="container text-center">
+            <h2>Get Your ZIoT Device</h2>
+            <br>
+            <form id="contact-form">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control" id="inputFirstName" name="first_name" aria-describedby="emailHelp" placeholder="First Name">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="lastNameName">Last Name</label>
+                            <input type="text" class="form-control" id="inputLastName" name="last_name" aria-describedby="emailHelp" placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email</label>
+                            <input type="email" class="form-control" name="user_email" id="inputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Additional Questions</label>
+                    <textarea class="form-control" id="inputTextarea1" name="message" rows="3"></textarea>
+                </div>
+                <input class="btn btn-primary btn-lg" type="submit" value="Send">
+            </form>
+        </div>
+        <br>
+    </section>
+
+    <br>
+    <br>
+
+    <!-- Footer -->
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <span class="mb-3 mb-md-0 text-muted">Copyright 2024 ZIoT Automation Systems</span>
+                <span class="mb-3 mb-md-0 text-muted">Warminster, PA 18974, USA</span>
+            </div>
+
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-3">
+                    <a class="text-muted" href="https://www.linkedin.com/company/ziot-systems/">
+                        <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" height="26">
+                    </a>
+                </li>
+                <li class="ms-3">
+                    <a class="text-muted" href="https://www.instagram.com/ziotsystems">
+                        <img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-1024.png" height="26">
+                    </a>
+                </li>
+            </ul>
+        </footer>
+    </div>
+
+    <script src="{{ "/assets/js/typer.js" | relative_url }}"></script>
+    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', '{{ site.google_analytics }}', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+
+</body>
+</html>
