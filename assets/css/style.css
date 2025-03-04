@@ -1,15 +1,15 @@
 @import "jekyll-theme-minimal";
 
-.sigmar-regular {
-    font-family: "Sigmar", sans-serif;
+.roboto-condensed-<uniquifier > {
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
 }
 
-
-h1 {
-    font-family: "Sigmar", sans-serif;
-    font-family: "Sigmar", sans-serif;
+h1, h2, h3 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
 }
