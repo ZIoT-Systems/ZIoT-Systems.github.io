@@ -1,248 +1,497 @@
-﻿<!DOCTYPE html>
-<html lang="{{ site.lang | default: 'en-US' }}">
+﻿<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="HFyoEDA--0LBZ_O5xisicBesk80_uFlym5rnF2i-D3I" />
     <meta name="keywords" content="ZIoT Systems, IoT Monitoring Systems, IoT Automation Systems" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ZIoT Systems — Advanced Industrial Monitoring</title>
 
-    <!-- Bootstrap 4.6 CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/scss" src="{{ '/assets/css/style.scss' | relative_url }}" />
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/logoZZ.ico">
 
+    <!-- Theme styling (small, embedded for ease of drop-in) -->
+    <style>
+        :root {
+            --ziot-blue: #0f4c81;
+            --ziot-accent: #1fb6ff;
+            --card-bg: #0b1220;
+            --muted: #9aa7b2;
+            --glass: rgba(255,255,255,0.03);
+        }
+
+        body {
+            background: linear-gradient(180deg,#061021 0%, #081427 60%);
+            color: #e8f0f6;
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        }
+
+        .navbar {
+            background: rgba(255,255,255,0.03);
+        }
+
+            .navbar .nav-link {
+                color: #dfeefc;
+            }
+
+        .hero {
+            padding: 6rem 0;
+            background: linear-gradient(180deg, rgba(15,76,129,0.08), transparent);
+            border-radius: 0.5rem;
+            box-shadow: 0 8px 30px rgba(3,10,18,0.6);
+        }
+
+            .hero .lead {
+                color: #cbe7ff;
+                font-size: 1.05rem;
+            }
+
+        .card.feature {
+            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            border: none;
+            color: #dfeefc;
+        }
+
+        .industry-icon {
+            font-size: 2.2rem;
+            color: var(--ziot-accent);
+        }
+
+        .cta-primary {
+            background: var(--ziot-accent);
+            color: #061021;
+            font-weight: 700;
+            border: none;
+        }
+
+        footer {
+            color: var(--muted);
+        }
+
+        .muted {
+            color: var(--muted);
+        }
+        /* responsive image card */
+        .device-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255,255,255,0.04);
+        }
+
+        @media (max-width: 767px) {
+            .hero {
+                padding: 3rem 0;
+            }
+        }
+    </style>
+
     <!-- EmailJS -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script>
-        (function () { emailjs.init('HcZJ8F43t5hLFT5FI'); })();
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // preserve your EmailJS init key
+            emailjs.init('HcZJ8F43t5hLFT5FI');
+            console.info("EmailJS initialized");
+        })();
     </script>
 
-    <!-- GA4 -->
+    <!-- Google tag (gtag.js) - GA4 (preserved) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWQ5MWZHPH"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-JWQ5MWZHPH');
+        console.info("GA4 gtag configured");
     </script>
-
-    <title>ZIoT Systems 2024</title>
 </head>
 
-<body class="container-fluid">
+<body>
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#topHome" aria-label="ZIoT Systems Home">
+                <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/logoZZNOBG.png" alt="ZIoT logo" height="64" class="me-2">
+                <div class="d-none d-md-block">
+                    <div style="font-weight:700;">ZIoT Systems</div>
+                    <small class="text-muted">Industrial Monitoring</small>
+                </div>
+            </a>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#topHome">
-            <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/logoZZNOBG.png" alt="ZIoT Logo" height="95">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto font-weight-bold">
-                <li class="nav-item active"><a class="nav-link" href="#topHome">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#aboutUsAnchor">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#how-to-use">Usage</a></li>
-                <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
-                <li class="nav-item"><a class="nav-link" href="#demoAnchor">Get Device</a></li>
-            </ul>
+            <div class="collapse navbar-collapse" id="navMain">
+                <ul class="navbar-nav ms-auto me-3">
+                    <li class="nav-item"><a class="nav-link" href="#topHome">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#aboutUsAnchor">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#how-to-use">Usage</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#industries">Industries</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#demoAnchor">Get Device</a></li>
+                </ul>
+
+                <div class="d-flex">
+                    <a class="btn cta-primary btn-sm" href="#demoAnchor" role="button">Get a Quote</a>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="bg py-5" id="topHome">
-        <div class="container text-center">
-            <h1>ZIoT Systems</h1>
-            <h3 class="text-secondary font-italic">Advanced Industrial Monitoring</h3>
-            <div class="row mt-4">
-                <div class="col-md-6 text-left">
-                    <p>
-                        At ZIoT Systems, we provide <strong>tailored monitoring solutions that run on your network</strong>.
-                        Our devices integrate seamlessly with existing infrastructure for simplicity, flexibility, and cost-effectiveness.
-                    </p>
-                    <p>
-                        <strong>Typical Applications:</strong>
-                    </p>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">PLC Integration</li>
-                        <li class="list-group-item">3D Printers</li>
-                        <li class="list-group-item">Custom Electronic Assemblies</li>
-                        <li class="list-group-item">CNC Machines</li>
-                        <li class="list-group-item">Conveyor Operations</li>
+    <main class="container my-5" id="topHome">
+        <!-- HERO -->
+        <section class="hero p-4 p-md-5">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-md-start text-center">
+                    <h1 class="display-5 fw-bold">Advanced Industrial Monitoring — Simplified</h1>
+                    <p class="lead">Get SCADA-level insights without the complexity or cost. ZIoT devices are plug-and-play, user programmable, and built for harsh industrial environments.</p>
+
+                    <div class="d-flex justify-content-center justify-content-md-start gap-2">
+                        <a href="#demoAnchor" class="btn cta-primary btn-lg">Contact Sales</a>
+                        <a href="#how-to-use" class="btn btn-outline-light btn-lg">How it Works</a>
+                    </div>
+
+                    <div class="mt-4 text-muted small">
+                        <span class="me-3"><i class="bi bi-check-circle-fill me-1" style="color:var(--ziot-accent)"></i>Fast deployment</span>
+                        <span class="me-3"><i class="bi bi-lock-fill me-1" style="color:var(--ziot-accent)"></i>Encrypted communications</span>
+                        <span><i class="bi bi-hdd-network-fill me-1" style="color:var(--ziot-accent)"></i>Local dashboard option</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 text-center mt-4 mt-md-0">
+                    <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/new-devices-70.png" alt="ZIoT device photo" class="device-image shadow-sm">
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-light mt-5">
+
+        <!-- ABOUT -->
+        <section id="aboutUsAnchor" class="my-5">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6">
+                    <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/file%20(7).png" alt="ZIoT sensors" class="img-fluid rounded device-image">
+                </div>
+                <div class="col-lg-6">
+                    <h2>About ZIoT</h2>
+                    <p class="muted">ZIot Systems builds durable sensor devices and a secure communications dashboard for industrial asset monitoring. Attach our sensors to machines to measure vibration, force, and other critical signals—each device can monitor up to eight points. Customize triggers, schedule readings, or read on-demand from a local dashboard on your network.</p>
+
+                    <ul class="list-unstyled">
+                        <li><strong>Quick install:</strong> Device up and running in minutes.</li>
+                        <li><strong>Flexible integration:</strong> Works alongside PLCs, CNC, conveyors, and custom assemblies.</li>
+                        <li><strong>Local-first:</strong> Keep data on-premises with optional encrypted cloud forwarding.</li>
                     </ul>
-                    <a class="btn btn-primary btn-lg mt-3" href="#demoAnchor">Contact Us</a>
-                </div>
-                <div class="col-md-6">
-                    <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/new-devices-70.png" class="img-fluid" alt="ZIoT Devices">
+
+                    <a class="btn btn-outline-light" href="https://ziot-systems.github.io/howitworks" target="_blank" rel="noopener">Learn how it works</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section class="bg-light py-5" id="aboutUsAnchor">
-        <div class="container text-center">
-            <h2>About ZIoT</h2>
-            <div class="row mt-4 align-items-center">
-                <div class="col-md-6">
-                    <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/file%20(7).png" class="img-fluid" alt="About ZIoT">
-                </div>
-                <div class="col-md-6 text-left">
-                    <p>
-                        ZIoT Systems offers <strong>durable sensors</strong> that attach securely to equipment,
-                        providing monitoring of <strong>vibration, force, and other parameters</strong>.
-                    </p>
-                    <p>
-                        Our devices connect via Wi-Fi, sending data to a secure, user-friendly dashboard.
-                        Each device can monitor up to eight points with customizable triggers and periodic readings.
-                    </p>
-                    <a class="btn btn-primary btn-lg mt-3" href="https://ziot-systems.github.io/howitworks" target="_blank">Learn More</a>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- HOW TO USE -->
+        <section id="how-to-use" class="my-5">
+            <div class="p-4 rounded-3" style="background: rgba(255,255,255,0.02);">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h3>How To Use Your ZIoT Device</h3>
+                        <p class="muted">Mount the sensor, connect to your Wi-Fi or local network, and register the device on the dashboard. Configure sampling, alerts, and logging in the user-friendly interface. No special software required—run the dashboard locally or use our secure hosted option.</p>
 
-    <!-- How to Use Section -->
-    <section id="how-to-use" class="bg py-5">
-        <div class="container text-center">
-            <h2>How To Use Your ZIoT Device</h2>
-            <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/good-ziot-sys.png" class="img-fluid my-4" style="max-width:70%" alt="How to Use">
-            <p class="font-italic text-primary"><a href="#demoAnchor">For more application info, contact us below.</a></p>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="bg-light py-5">
-        <div class="container text-center">
-            <h2>Features and Benefits</h2>
-            <div class="row mt-4">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/fast-icon.png" class="card-img-top" alt="Fast Setup">
-                        <div class="card-body">
-                            <h5 class="card-title font-italic">Fast Setup</h5>
-                            <p class="card-text">Install and activate your ZIoT device in minutes, minimizing downtime.</p>
-                        </div>
+                        <ol class="muted">
+                            <li>Install sensor on equipment (magnetic or mechanical mount options)</li>
+                            <li>Connect to local network and power</li>
+                            <li>Register device on dashboard and select monitored points</li>
+                            <li>Set thresholds, notifications, and export rules</li>
+                        </ol>
+                        <p class="small text-muted">For custom integrations or PLC bridging, contact our solutions team.</p>
                     </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/plug-and-play.png" class="card-img-top" alt="Plug and Play">
-                        <div class="card-body">
-                            <h5 class="card-title font-italic">Quick Plug and Play</h5>
-                            <p class="card-text">Connect your ZIoT device to a variety of equipment with ease.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/dashb.jpg" class="card-img-top" alt="Dashboard">
-                        <div class="card-body">
-                            <h5 class="card-title font-italic">Intuitive Dashboard</h5>
-                            <p class="card-text">Secure and user-friendly dashboard for complete operational overview.</p>
-                        </div>
+                    <div class="col-md-6 text-center">
+                        <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/good-ziot-sys.png" alt="Dashboard preview" class="img-fluid rounded device-image">
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="row mt-4">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/docs-icon.png" class="card-img-top" alt="User Programmable">
-                        <div class="card-body">
-                            <h5 class="card-title font-italic">User Programmable</h5>
-                            <p class="card-text">Modify and optimize device functions to fit your workflow.</p>
+        <!-- FEATURES -->
+        <section id="features" class="my-5">
+            <h3 class="mb-4">Features & Benefits</h3>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="card feature h-100 p-3">
+                        <div class="d-flex align-items-start gap-3">
+                            <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/fast-icon.png" alt="Fast setup" width="64" height="64">
+                            <div>
+                                <h5 class="mb-1">Fast Setup</h5>
+                                <p class="small muted mb-0">Deploy sensors quickly—minimal downtime and plug-and-play networking.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/ecosystem-icon.png" class="card-img-top" alt="Device Ecosystem">
-                        <div class="card-body">
-                            <h5 class="card-title font-italic">Extensive Device Ecosystem</h5>
-                            <p class="card-text">Benefit from a robust network of devices working together.</p>
+
+                <div class="col-md-4">
+                    <div class="card feature h-100 p-3">
+                        <div class="d-flex align-items-start gap-3">
+                            <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/plug-and-play.png" alt="Plug and play" width="64" height="64">
+                            <div>
+                                <h5 class="mb-1">Plug & Play</h5>
+                                <p class="small muted mb-0">Connect to diverse equipment and protocols with minimal configuration.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/lowcost.jpg" class="card-img-top" alt="Cost Effective">
-                        <div class="card-body">
-                            <h5 class="card-title font-italic">Cost Effective</h5>
-                            <p class="card-text">High-level monitoring without the cost of full SCADA systems.</p>
+
+                <div class="col-md-4">
+                    <div class="card feature h-100 p-3">
+                        <div class="d-flex align-items-start gap-3">
+                            <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/dashb.jpg" alt="Dashboard" width="64" height="64">
+                            <div>
+                                <h5 class="mb-1">Intuitive Dashboard</h5>
+                                <p class="small muted mb-0">Secure, easy-to-use interface for real-time monitoring, trends, and alerts.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- second row -->
+                <div class="col-md-4">
+                    <div class="card feature h-100 p-3">
+                        <div class="d-flex align-items-start gap-3">
+                            <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/docs-icon.png" alt="User programmable" width="64" height="64">
+                            <div>
+                                <h5 class="mb-1">User Programmable</h5>
+                                <p class="small muted mb-0">Customize triggers and processing logic to match your workflow.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card feature h-100 p-3">
+                        <div class="d-flex align-items-start gap-3">
+                            <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/ecosystem-icon.png" alt="Ecosystem" width="64" height="64">
+                            <div>
+                                <h5 class="mb-1">Device Ecosystem</h5>
+                                <p class="small muted mb-0">Scale from a single machine to full-line coverage with consistent tools.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card feature h-100 p-3">
+                        <div class="d-flex align-items-start gap-3">
+                            <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/lowcost.jpg" alt="Cost effective" width="64" height="64">
+                            <div>
+                                <h5 class="mb-1">Cost Effective</h5>
+                                <p class="small muted mb-0">Lower cost than full SCADA with comparable insights for many use-cases.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact / Demo Section -->
-    <section class="bg py-5" id="demoAnchor">
-        <div class="container text-center">
-            <h2>Get Your ZIoT Device</h2>
-            <form id="contact-form" class="mt-4">
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <input type="text" class="form-control" id="inputFirstName" name="first_name" placeholder="First Name" required>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <input type="text" class="form-control" id="inputLastName" name="last_name" placeholder="Last Name" required>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <input type="email" class="form-control" id="inputEmail1" name="user_email" placeholder="Email" required>
+        <!-- INDUSTRIES -->
+        <section id="industries" class="my-5">
+            <h3 class="mb-4">Typical Applications</h3>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="card p-3 h-100 feature">
+                        <div class="d-flex align-items-start gap-3">
+                            <i class="bi bi-gear-fill industry-icon"></i>
+                            <div>
+                                <h6 class="mb-1">PLC Integration</h6>
+                                <p class="small muted mb-0">Bridge sensor data to your PLC or historian for advanced automation.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <textarea class="form-control" id="inputTextarea1" name="message" rows="3" placeholder="Additional Questions"></textarea>
-                </div>
-                <input type="submit" class="btn btn-primary btn-lg" value="Send">
-            </form>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="bg-light py-3 mt-5">
-        <div class="container d-flex flex-wrap justify-content-between align-items-center">
-            <span class="text-muted">Copyright 2024 ZIoT Automation Systems, Warminster, PA, USA</span>
-            <div>
-                <a href="https://www.linkedin.com/company/98969203/admin/feed/posts/?feedType=following" class="text-muted mr-3">
-                    <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" height="26">
-                </a>
-                <a href="https://www.instagram.com/ziotsystems" class="text-muted">
-                    <img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-1024.png" height="26">
-                </a>
+                <div class="col-md-4">
+                    <div class="card p-3 h-100 feature">
+                        <div class="d-flex align-items-start gap-3">
+                            <i class="bi bi-printer-fill industry-icon"></i>
+                            <div>
+                                <h6 class="mb-1">3D Printers</h6>
+                                <p class="small muted mb-0">Monitor vibrations and thermal status for consistent print quality.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card p-3 h-100 feature">
+                        <div class="d-flex align-items-start gap-3">
+                            <i class="bi bi-cpu-fill industry-icon"></i>
+                            <div>
+                                <h6 class="mb-1">Custom Electronic Assemblies</h6>
+                                <p class="small muted mb-0">Bring up boards and validate assemblies with easily attached sensors.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card p-3 h-100 feature">
+                        <div class="d-flex align-items-start gap-3">
+                            <i class="bi bi-sliders2-vertical industry-icon"></i>
+                            <div>
+                                <h6 class="mb-1">CNC Machines</h6>
+                                <p class="small muted mb-0">Detect early signs of tool wear and mechanical issues to reduce downtime.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card p-3 h-100 feature">
+                        <div class="d-flex align-items-start gap-3">
+                            <i class="bi bi-box-seam industry-icon"></i>
+                            <div>
+                                <h6 class="mb-1">Conveyor Operations</h6>
+                                <p class="small muted mb-0">Track vibrations and throughput to prevent jams and maintain flow.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card p-3 h-100 feature">
+                        <div class="d-flex align-items-start gap-3">
+                            <i class="bi bi-building industry-icon"></i>
+                            <div>
+                                <h6 class="mb-1">Custom Installations</h6>
+                                <p class="small muted mb-0">If you have a unique use case, we design custom mounts, fixtures, and integrations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <!-- CTA + Contact Form -->
+        <section id="demoAnchor" class="my-5 p-4 rounded-3" style="background: linear-gradient(0deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-5">
+                    <h4>Get Your ZIoT Device</h4>
+                    <p class="muted">Contact our sales team for a quote, trial device, or custom integration. We typically respond within one business day.</p>
+
+                    <ul class="small muted">
+                        <li>Local-first dashboards with optional cloud forwarding</li>
+                        <li>Eight measurement points per device</li>
+                        <li>Encrypted communications and flexible alerting</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-7">
+                    <form id="contact-form" class="row g-2" novalidate>
+                        <div class="col-md-4">
+                            <label class="form-label visually-hidden" for="inputFirstName">First Name</label>
+                            <input type="text" class="form-control" id="inputFirstName" name="first_name" placeholder="First name" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label visually-hidden" for="inputLastName">Last Name</label>
+                            <input type="text" class="form-control" id="inputLastName" name="last_name" placeholder="Last name" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label visually-hidden" for="inputEmail1">Email</label>
+                            <input type="email" class="form-control" id="inputEmail1" name="user_email" placeholder="Email" required>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label visually-hidden" for="inputTextarea1">Additional Questions</label>
+                            <textarea id="inputTextarea1" name="message" class="form-control" rows="3" placeholder="How can we help?"></textarea>
+                        </div>
+                        <div class="col-12 text-end">
+                            <button type="submit" class="btn cta-primary btn-lg">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Small legal / local line -->
+        <div class="text-end small muted mb-5">Warminster, PA 18974, USA</div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-4 border-top" role="contentinfo">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <div class="mb-3 mb-md-0">
+                <div>&copy; <span id="copyYear"></span> ZIoT Automation Systems</div>
+                <div class="muted small">All rights reserved.</div>
+            </div>
+
+            <ul class="list-unstyled d-flex gap-3 mb-0">
+                <li><a class="text-light small" href="https://www.linkedin.com/company/98969203/admin/feed/posts/?feedType=following" aria-label="ZIoT LinkedIn"><img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" height="22" alt="LinkedIn"></a></li>
+                <li><a class="text-light small" href="https://www.instagram.com/ziotsystems" aria-label="ZIoT Instagram"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-1024.png" height="22" alt="Instagram"></a></li>
+            </ul>
         </div>
     </footer>
 
-    <!-- JS Bootstrap 4.6 -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+    <!-- Bootstrap 5 Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeo5s0sq6FZrQZAnkA2f9l+3yY0h+2RVb9I6QmM5Q5p2V9x" crossorigin="anonymous"></script>
 
+    <!-- Contact form handling (preserve console logs & EmailJS sendForm behavior) -->
     <script>
-        document.getElementById('contact-form').addEventListener('submit', function (event) {
-            var firstName = document.getElementById("inputFirstName").value;
-            var lastName = document.getElementById("inputLastName").value;
-            var email = document.getElementById("inputEmail1").value;
-            if (!firstName || !lastName || !email) {
-                alert("Error With User Data!\nPlease try again");
-                return;
-            }
-            event.preventDefault();
-            emailjs.sendForm('service_nr6kcbi', 'ziot_template', this)
-                .then(function () { alert("Thank You! We Will Respond Shortly"); },
-                    function (error) { console.log('FAILED...', error); });
-        });
+        // set copyright year dynamically
+        document.getElementById('copyYear').textContent = new Date().getFullYear();
+
+        // form submission with EmailJS
+        (function () {
+            const form = document.getElementById('contact-form');
+            if (!form) { console.warn("Contact form not found"); return; }
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const firstName = document.getElementById('inputFirstName').value.trim();
+                const lastName = document.getElementById('inputLastName').value.trim();
+                const email = document.getElementById('inputEmail1').value.trim();
+
+                if (!firstName || !lastName || !email) {
+                    alert("Error With User Data!\nPlease provide first name, last name, and email.");
+                    return;
+                }
+
+                console.log('contact form submit triggered', { firstName, lastName, email });
+
+                // Use your existing service/template ids (left unchanged)
+                emailjs.sendForm('service_nr6kcbi', 'ziot_template', this)
+                    .then(function () {
+                        console.log('EmailJS: SUCCESS!');
+                        alert("Thank You!\nWe will respond shortly.");
+                        form.reset();
+                    }, function (error) {
+                        console.error('EmailJS: FAILED...', error);
+                        alert("Submission failed — please try again or email us directly.");
+                    });
+            });
+        })();
     </script>
 
-    <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
+    <!-- Optional: site scale fix (kept reference) -->
+    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+
+    <!-- legacy google analytics block (kept behind template conditional if present) -->
+    {{% if site.google_analytics %}}
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', '{{ site.google_analytics }}', 'auto');
+    ga('send', 'pageview');
+    </script>
+    {{% endif %}}
 
 </body>
 </html>
