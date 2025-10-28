@@ -1,11 +1,248 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="{{ site.lang | default: 'en-US' }}">
 <head>
-    <meta charset="utf-8">
-    <title>Bootstrap Test</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="HFyoEDA--0LBZ_O5xisicBesk80_uFlym5rnF2i-D3I" />
+    <meta name="keywords" content="ZIoT Systems, IoT Monitoring Systems, IoT Automation Systems" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 4.6 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-GTVk6SftWx8jTXGhyxOTw4ZLHP6QyL3d6kAElI9Ee8+xx3pWf54Q0cw6iS3Ckfj6" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/scss" src="{{ '/assets/css/style.scss' | relative_url }}" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/logoZZ.ico">
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function () { emailjs.init('HcZJ8F43t5hLFT5FI'); })();
+    </script>
+
+    <!-- GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWQ5MWZHPH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-JWQ5MWZHPH');
+    </script>
+
+    <title>ZIoT Systems 2024</title>
 </head>
-<body>
-    <button class="btn btn-primary m-3">Bootstrap Button</button>
+
+<body class="container-fluid">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#topHome">
+            <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/logoZZNOBG.png" alt="ZIoT Logo" height="95">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto font-weight-bold">
+                <li class="nav-item active"><a class="nav-link" href="#topHome">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#aboutUsAnchor">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#how-to-use">Usage</a></li>
+                <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                <li class="nav-item"><a class="nav-link" href="#demoAnchor">Get Device</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg py-5" id="topHome">
+        <div class="container text-center">
+            <h1>ZIoT Systems</h1>
+            <h3 class="text-secondary font-italic">Advanced Industrial Monitoring</h3>
+            <div class="row mt-4">
+                <div class="col-md-6 text-left">
+                    <p>
+                        At ZIoT Systems, we provide <strong>tailored monitoring solutions that run on your network</strong>.
+                        Our devices integrate seamlessly with existing infrastructure for simplicity, flexibility, and cost-effectiveness.
+                    </p>
+                    <p>
+                        <strong>Typical Applications:</strong>
+                    </p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">PLC Integration</li>
+                        <li class="list-group-item">3D Printers</li>
+                        <li class="list-group-item">Custom Electronic Assemblies</li>
+                        <li class="list-group-item">CNC Machines</li>
+                        <li class="list-group-item">Conveyor Operations</li>
+                    </ul>
+                    <a class="btn btn-primary btn-lg mt-3" href="#demoAnchor">Contact Us</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/new-devices-70.png" class="img-fluid" alt="ZIoT Devices">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="bg-light py-5" id="aboutUsAnchor">
+        <div class="container text-center">
+            <h2>About ZIoT</h2>
+            <div class="row mt-4 align-items-center">
+                <div class="col-md-6">
+                    <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/file%20(7).png" class="img-fluid" alt="About ZIoT">
+                </div>
+                <div class="col-md-6 text-left">
+                    <p>
+                        ZIoT Systems offers <strong>durable sensors</strong> that attach securely to equipment,
+                        providing monitoring of <strong>vibration, force, and other parameters</strong>.
+                    </p>
+                    <p>
+                        Our devices connect via Wi-Fi, sending data to a secure, user-friendly dashboard.
+                        Each device can monitor up to eight points with customizable triggers and periodic readings.
+                    </p>
+                    <a class="btn btn-primary btn-lg mt-3" href="https://ziot-systems.github.io/howitworks" target="_blank">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Use Section -->
+    <section id="how-to-use" class="bg py-5">
+        <div class="container text-center">
+            <h2>How To Use Your ZIoT Device</h2>
+            <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/good-ziot-sys.png" class="img-fluid my-4" style="max-width:70%" alt="How to Use">
+            <p class="font-italic text-primary"><a href="#demoAnchor">For more application info, contact us below.</a></p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="bg-light py-5">
+        <div class="container text-center">
+            <h2>Features and Benefits</h2>
+            <div class="row mt-4">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/fast-icon.png" class="card-img-top" alt="Fast Setup">
+                        <div class="card-body">
+                            <h5 class="card-title font-italic">Fast Setup</h5>
+                            <p class="card-text">Install and activate your ZIoT device in minutes, minimizing downtime.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/plug-and-play.png" class="card-img-top" alt="Plug and Play">
+                        <div class="card-body">
+                            <h5 class="card-title font-italic">Quick Plug and Play</h5>
+                            <p class="card-text">Connect your ZIoT device to a variety of equipment with ease.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/dashb.jpg" class="card-img-top" alt="Dashboard">
+                        <div class="card-body">
+                            <h5 class="card-title font-italic">Intuitive Dashboard</h5>
+                            <p class="card-text">Secure and user-friendly dashboard for complete operational overview.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/docs-icon.png" class="card-img-top" alt="User Programmable">
+                        <div class="card-body">
+                            <h5 class="card-title font-italic">User Programmable</h5>
+                            <p class="card-text">Modify and optimize device functions to fit your workflow.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/ecosystem-icon.png" class="card-img-top" alt="Device Ecosystem">
+                        <div class="card-body">
+                            <h5 class="card-title font-italic">Extensive Device Ecosystem</h5>
+                            <p class="card-text">Benefit from a robust network of devices working together.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/lowcost.jpg" class="card-img-top" alt="Cost Effective">
+                        <div class="card-body">
+                            <h5 class="card-title font-italic">Cost Effective</h5>
+                            <p class="card-text">High-level monitoring without the cost of full SCADA systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Demo Section -->
+    <section class="bg py-5" id="demoAnchor">
+        <div class="container text-center">
+            <h2>Get Your ZIoT Device</h2>
+            <form id="contact-form" class="mt-4">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <input type="text" class="form-control" id="inputFirstName" name="first_name" placeholder="First Name" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <input type="text" class="form-control" id="inputLastName" name="last_name" placeholder="Last Name" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <input type="email" class="form-control" id="inputEmail1" name="user_email" placeholder="Email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" id="inputTextarea1" name="message" rows="3" placeholder="Additional Questions"></textarea>
+                </div>
+                <input type="submit" class="btn btn-primary btn-lg" value="Send">
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-light py-3 mt-5">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center">
+            <span class="text-muted">Copyright 2024 ZIoT Automation Systems, Warminster, PA, USA</span>
+            <div>
+                <a href="https://www.linkedin.com/company/98969203/admin/feed/posts/?feedType=following" class="text-muted mr-3">
+                    <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" height="26">
+                </a>
+                <a href="https://www.instagram.com/ziotsystems" class="text-muted">
+                    <img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-1024.png" height="26">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Bootstrap 4.6 -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            var firstName = document.getElementById("inputFirstName").value;
+            var lastName = document.getElementById("inputLastName").value;
+            var email = document.getElementById("inputEmail1").value;
+            if (!firstName || !lastName || !email) {
+                alert("Error With User Data!\nPlease try again");
+                return;
+            }
+            event.preventDefault();
+            emailjs.sendForm('service_nr6kcbi', 'ziot_template', this)
+                .then(function () { alert("Thank You! We Will Respond Shortly"); },
+                    function (error) { console.log('FAILED...', error); });
+        });
+    </script>
+
+    <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
+
 </body>
 </html>
