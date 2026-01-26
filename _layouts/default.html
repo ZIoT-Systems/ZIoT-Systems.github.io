@@ -6,9 +6,10 @@
     <meta name="google-site-verification" content="HFyoEDA--0LBZ_O5xisicBesk80_uFlym5rnF2i-D3I" />
     <meta name="keywords" content="ZIoT Systems, LineTrace, Manufacturing Software, Test Traceability, Industrial Monitoring" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>ZIoT Systems - Hardware + Manufacturing Software</title>
 
-    <!-- Bootstrap -->
+    <!-- Bootstrap 5.3 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
@@ -17,6 +18,7 @@
 
     <style>
         :root {
+            --ziot-blue: #0f4c81;
             --ziot-accent: #1fb6ff;
             --muted: #9aa7b2;
         }
@@ -24,13 +26,17 @@
         body {
             background: linear-gradient(180deg,#061021 0%, #081427 60%);
             color: #e8f0f6;
-            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
             overflow-x: hidden;
         }
 
         .navbar {
             background: rgba(255,255,255,0.03);
         }
+
+            .navbar .nav-link {
+                color: #dfeefc;
+            }
 
         .navbar-brand img {
             height: 48px;
@@ -45,8 +51,24 @@
         .hero {
             padding: 6rem 1rem;
             background: linear-gradient(180deg, rgba(15,76,129,0.10), transparent);
-            border-radius: .5rem;
-            box-shadow: 0 8px 30px rgba(3,10,18,.6);
+            border-radius: 0.5rem;
+            box-shadow: 0 8px 30px rgba(3,10,18,0.6);
+        }
+
+        @media (max-width: 767px) {
+            .hero {
+                padding: 3rem 1rem;
+            }
+        }
+
+        .hero .lead {
+            color: #cbe7ff;
+        }
+
+        .device-image {
+            max-width: 100%;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
         .cta-primary {
@@ -56,13 +78,11 @@
             border: none;
         }
 
-        .device-image {
-            max-width: 100%;
-            border-radius: .5rem;
-            border: 1px solid rgba(255,255,255,.04);
+        .muted {
+            color: var(--muted);
         }
 
-        .muted {
+        footer {
             color: var(--muted);
         }
     </style>
@@ -71,7 +91,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
         (function () {
-        emailjs.init('HcZJ8F43t5hLFT5FI');
+        emailjs.init("HcZJ8F43t5hLFT5FI");
         })();
     </script>
 
@@ -79,7 +99,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWQ5MWZHPH"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){ dataLayer.push(arguments); }
+        function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-JWQ5MWZHPH');
     </script>
@@ -91,88 +111,145 @@
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#topHome">
-                <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/logoZZNOBG.png" class="me-2">
+                <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/logoZZNOBG.png" alt="ZIoT logo" class="me-2">
                 <div class="d-none d-md-block">
                     <div class="fw-bold">ZIoT Systems</div>
                     <small>Hardware + Manufacturing Software</small>
                 </div>
             </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMain">
+                <ul class="navbar-nav ms-auto me-3">
+                    <li class="nav-item"><a class="nav-link" href="#topHome">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#linetrace">LineTrace</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hardware">Hardware</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#demoAnchor">Contact</a></li>
+                </ul>
+                <a class="btn cta-primary btn-sm" href="#linetrace">Explore LineTrace</a>
+            </div>
         </div>
     </nav>
 
     <main class="container my-5" id="topHome">
 
         <!-- HERO -->
-        <section class="hero text-center text-md-start">
+        <section class="hero">
             <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h1 class="display-5 fw-bold">Manufacturing Data</h1>
-                    <h1 class="display-5 fw-bold">Captured, Traced, Trusted</h1>
+                <div class="col-md-6 text-center text-md-start">
+                    <h1 class="fw-bold display-5">Manufacturing Data</h1>
+                    <h1 class="fw-bold display-5">Captured, Traced, Trusted</h1>
                     <p class="lead">
-                        Hardware and software for the factory floor.
-                        <strong>LineTrace</strong> delivers clean manufacturing data.
+                        ZIoT Systems builds hardware and software for the factory floor.
+                        From industrial monitoring devices to <strong>LineTrace</strong>.
                     </p>
+
+                    <div class="d-flex gap-2 justify-content-center justify-content-md-start flex-wrap">
+                        <a href="#linetrace" class="btn cta-primary btn-lg">Explore LineTrace</a>
+                        <a href="#hardware" class="btn btn-outline-light btn-lg">Hardware Solutions</a>
+                    </div>
                 </div>
+
                 <div class="col-md-6 text-center mt-4 mt-md-0">
                     <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/refs/heads/main/hero-image-12526.png"
-                         class="device-image shadow-sm">
+                         class="device-image" alt="ZIoT device">
                 </div>
             </div>
         </section>
 
-        <!-- CONTACT -->
-        <section class="py-5" id="demoAnchor">
-            <div class="container text-center">
-                <h2>Request a Demo</h2>
+        <hr class="border-light mt-5">
 
-                <form id="contact-form" class="row g-3 mt-4 justify-content-center">
-                    <div class="col-md-4">
-                        <input type="text" class="form-control" name="first_name" id="inputFirstName" placeholder="First Name" required>
-                    </div>
-                    <div class="col-md-4">
-                        <input type="text" class="form-control" name="last_name" id="inputLastName" placeholder="Last Name" required>
-                    </div>
-                    <div class="col-md-4">
-                        <input type="email" class="form-control" name="user_email" id="inputEmail1" placeholder="Email" required>
-                    </div>
-                    <div class="col-12">
-                        <textarea class="form-control" name="message" rows="3" placeholder="How can we help?"></textarea>
-                    </div>
-                    <div class="col-12">
-                        <button class="btn cta-primary btn-lg" type="submit">Send</button>
-                    </div>
-                </form>
+        <!-- LINETRACE -->
+        <section id="linetrace" class="my-5">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6">
+                    <h2>LineTrace</h2>
+                    <p class="lead">Manufacturing test and traceability software built for real production.</p>
+                    <p class="muted">
+                        Capture test results, measurements, and pass/fail decisions
+                        directly from fixtures, instruments, and vision systems.
+                    </p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/refs/heads/main/line-trace2.png"
+                         class="device-image img-fluid" alt="LineTrace dashboard">
+                </div>
             </div>
+        </section>
+
+        <hr class="border-light mt-5">
+
+        <!-- HARDWARE -->
+        <section id="hardware" class="my-5">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6 text-center">
+                    <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/file%20(7).png"
+                         class="device-image img-fluid" alt="Hardware">
+                </div>
+                <div class="col-lg-6">
+                    <h2>Industrial Monitoring Hardware</h2>
+                    <p class="muted">
+                        Durable sensor devices and secure dashboards for industrial environments.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-light mt-5">
+
+        <!-- CONTACT -->
+        <section id="demoAnchor" class="py-5 text-center">
+            <h2>Request Information</h2>
+
+            <form id="contact-form" class="row g-3 justify-content-center mt-4">
+                <div class="col-md-4">
+                    <input type="text" class="form-control" name="first_name" placeholder="First Name" required>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" name="last_name" placeholder="Last Name" required>
+                </div>
+                <div class="col-md-4">
+                    <input type="email" class="form-control" name="user_email" placeholder="Email" required>
+                </div>
+                <div class="col-12">
+                    <textarea class="form-control" name="message" rows="4" placeholder="Additional questions"></textarea>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary btn-lg" type="submit">Send</button>
+                </div>
+            </form>
         </section>
 
         <div class="text-end small muted mb-5">Warminster, PA 18974, USA</div>
+
     </main>
 
-    <footer class="py-4 border-top text-center">
-        <div>&copy; <span id="copyYear"></span> ZIoT Systems</div>
-        <div class="muted small">LineTrace is a product of ZIoT Systems</div>
+    <footer class="py-4 border-top">
+        <div class="container">
+            &copy; <span id="copyYear"></span> ZIoT Systems
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.getElementById('copyYear').textContent = new Date().getFullYear();
+        document.getElementById("copyYear").textContent = new Date().getFullYear();
 
-        document.getElementById('contact-form').addEventListener('submit', function (event) {
-            event.preventDefault(); 
-            emailjs.sendForm(
-                'service_nr6kcbi',
-                'ziot_template',
-                this
-            ).then(
-                function () {
-                    alert('Thank you! We will respond shortly.');
-                    event.target.reset();
-                },
-                function (error) {
-                    console.error('EmailJS failed:', error);
-                alert('Something went wrong. Please try again.');
-                }
-        );
+        document.getElementById("contact-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        emailjs.sendForm("service_nr6kcbi", "ziot_template", this)
+        .then(() => {
+        alert("Thank you! We will respond shortly.");
+        this.reset();
+        })
+        .catch(err => {
+        console.error("EmailJS error:", err);
+        alert("Something went wrong. Please try again.");
+        });
         });
     </script>
 
