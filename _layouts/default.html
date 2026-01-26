@@ -90,6 +90,36 @@
                 padding: 3rem 0;
             }
         }
+
+        /* Prevent horizontal overflow globally */
+        html, body {
+            overflow-x: hidden;
+        }
+
+        /* Ensure images never exceed their container */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Make forms responsive on small screens */
+        form input, form textarea, form button {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Adjust hero padding and prevent overflow */
+        .hero {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        /* Fix row gaps that might push content */
+        .row {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
     </style>
 </head>
 
