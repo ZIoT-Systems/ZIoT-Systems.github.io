@@ -264,8 +264,8 @@
                 <div class="row g-4">
                     <!-- ZIoT -->
                     <div class="col-md-6">
-                        <div class="p-4 h-100 border rounded-3 shadow-sm bg-white">
-                            <h4 class="fw-bold mb-3">ZIoT Systems</h4>
+                        <div class="p-4 h-100 border rounded-3 shadow-sm" style="background-color: #081427; border-color: rgba(255,255,255,0.1);">
+                            <h4 class="fw-bold mb-3" style="color: var(--ziot-accent)">ZIoT Systems</h4>
 
                             <div class="d-flex align-items-start mb-3">
                                 <span class="me-2">✅</span>
@@ -291,66 +291,33 @@
                     </div>
 
                     <!-- Enterprise -->
-                    <div class="col-md-6">
-                        <div class="p-4 h-100 border rounded-3 shadow-sm bg-secondary text-white">
-                            <h4 class="fw-bold mb-3">Large Enterprise Platforms</h4>
 
-                            <div class="d-flex align-items-start mb-3">
-                                <span class="me-2">⚠️</span>
-                                <span>Generic platforms adapted for manufacturing</span>
+
+
+                    <hr class="border-light mt-5">
+
+                    <!-- CONTACT -->
+                    <section id="demoAnchor" class="py-5 text-center">
+                        <h2>Request Information</h2>
+
+                        <form id="contact-form" class="row g-3 justify-content-center mt-4">
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" name="first_name" placeholder="First Name" required>
                             </div>
-                            <div class="d-flex align-items-start mb-3">
-                                <span class="me-2">🐌</span>
-                                <span>Long implementation and onboarding cycles</span>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" name="last_name" placeholder="Last Name" required>
                             </div>
-                            <div class="d-flex align-items-start mb-3">
-                                <span class="me-2">🔀</span>
-                                <span>Requires gateways, middleware, or consultants</span>
+                            <div class="col-md-4">
+                                <input type="email" class="form-control" name="user_email" placeholder="Email" required>
                             </div>
-                            <div class="d-flex align-items-start mb-3">
-                                <span class="me-2">🧠</span>
-                                <span>Complex rule engines and configuration layers</span>
+                            <div class="col-12">
+                                <textarea class="form-control" name="message" rows="4" placeholder="Additional questions"></textarea>
                             </div>
-                            <div class="d-flex align-items-start">
-                                <span class="me-2">💸</span>
-                                <span>High licensing costs and ongoing overhead</span>
+                            <div class="col-12">
+                                <button class="btn btn-primary btn-lg" type="submit">Send</button>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <p class="text-center mt-4 fw-semibold">
-                    Less overhead. More production throughput.
-                </p>
-            </div>
-        </section>
-
-
-
-        <hr class="border-light mt-5">
-
-        <!-- CONTACT -->
-        <section id="demoAnchor" class="py-5 text-center">
-            <h2>Request Information</h2>
-
-            <form id="contact-form" class="row g-3 justify-content-center mt-4">
-                <div class="col-md-4">
-                    <input type="text" class="form-control" name="first_name" placeholder="First Name" required>
-                </div>
-                <div class="col-md-4">
-                    <input type="text" class="form-control" name="last_name" placeholder="Last Name" required>
-                </div>
-                <div class="col-md-4">
-                    <input type="email" class="form-control" name="user_email" placeholder="Email" required>
-                </div>
-                <div class="col-12">
-                    <textarea class="form-control" name="message" rows="4" placeholder="Additional questions"></textarea>
-                </div>
-                <div class="col-12">
-                    <button class="btn btn-primary btn-lg" type="submit">Send</button>
-                </div>
-            </form>
-        </section>
+                        </form>
+                    </section>
 
 
     </main>
