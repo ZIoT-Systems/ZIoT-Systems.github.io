@@ -1,243 +1,216 @@
-﻿
-<!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
+﻿<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="HFyoEDA--0LBZ_O5xisicBesk80_uFlym5rnF2i-D3I" />
-    <meta name="keywords" content="ZIoT Systems, IoT Monitoring Systems, IoT Automation Systems" />
+    <meta name="keywords" content="ZIoT Systems, LineTrace, Manufacturing Software, Test Traceability, Industrial Monitoring" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/scss" src="{{ "/assets/css/style.scss" | relative_url }}" />
-    <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/logoZZ.ico">
 
+    <title>ZIoT Systems - Hardware + Manufacturing Software</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/logoZZ.ico">
 
     <style>
-        .roboto-condensed-<uniquifier > {
-            font-family: "Roboto Condensed", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 400;
-            font-style: normal;
+        :root {
+            --ziot-blue: #0f4c81;
+            --ziot-accent: #1fb6ff;
+            --muted: #9aa7b2;
         }
 
-        h1, h2, h3, h5 {
-            font-family: "Roboto Condensed", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 400;
-            font-style: normal;
+        body {
+            background: linear-gradient(180deg,#061021 0%, #081427 60%);
+            color: #e8f0f6;
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+            overflow-x: hidden;
         }
 
-        a, p {
-            font-family: "Roboto Condensed", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 300;
-            font-style: normal;
+        .navbar {
+            background: rgba(255,255,255,0.03);
+        }
+
+            .navbar .nav-link {
+                color: #dfeefc;
+            }
+
+        .navbar-brand img {
+            height: 48px;
+        }
+
+        @media (max-width: 767px) {
+            .navbar-brand img {
+                height: 36px;
+            }
+        }
+
+        .hero {
+            padding: 6rem 1rem;
+            background: linear-gradient(180deg, rgba(15,76,129,0.10), transparent);
+            border-radius: 0.5rem;
+            box-shadow: 0 8px 30px rgba(3,10,18,0.6);
+        }
+
+        @media (max-width: 767px) {
+            .hero {
+                padding: 3rem 1rem;
+            }
+        }
+
+        .hero .lead {
+            color: #cbe7ff;
+        }
+
+        .device-image {
+            max-width: 100%;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .cta-primary {
+            background: var(--ziot-accent);
+            color: #061021;
+            font-weight: 700;
+            border: none;
+        }
+
+        .muted {
+            color: var(--muted);
+        }
+
+        footer {
+            color: var(--muted);
         }
     </style>
 
-    <!-- Bootstrap-->
-    <!-- Check out https://georgetown-scientific.com/ -->
-    <!--Emailjs -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
         (function () {
-            // https://dashboard.emailjs.com/admin/account
-            emailjs.init('HcZJ8F43t5hLFT5FI');
+        emailjs.init("HcZJ8F43t5hLFT5FI");
         })();
     </script>
-    <script type="text/javascript">
-        window.onload = function () {
-            document.getElementById('contact-form').addEventListener('submit', function (event) {
-                var firstName = document.getElementById("inputFirstName").value;
-                var lastName = document.getElementById("inputLastName").value;
-                var email = document.getElementById("inputEmail1").value;
-                //  check for null
-                if (!firstName || !lastName || !email) {
-                    alert("Error With User Data!\nPlease try again");
-                    return;
-                }
-                event.preventDefault();
-                console.log('listener triggerd');
-                emailjs.sendForm('service_nr6kcbi', 'ziot_template', this)
-                    .then(function () {
-                        console.log('SUCCESS!');
-                        alert("Thank You!\n We Will Respond Shortly");
-                    }, function (error) {
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
-    </script>
-    <!-- Google tag (gtag.js) -->
+
+    <!-- GA4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWQ5MWZHPH"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+        function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-JWQ5MWZHPH');
     </script>
-    <title>ZIoT Systems 2025</title>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <!-- Write-up a how to use section -->
-    <!-- See https://www.frequentlyaskedai.com/ for a good example -->
-    <nav class="navbar navbar-expand-lg navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="https://ziot-systems.github.io/">
-            <!-- Might be an issue with token, since this repo is private-->
-            <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/logoZZNOBG.png" alt="..." height="95">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span> <!-- Icon here -->
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link font-weight-bold" href="https://ziot-systems.github.io/">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link font-weight-bold" href="https://ziot-systems.github.io/#aboutUsAnchor">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link font-weight-bold" href="https://ziot-systems.github.io/#how-to-use">Usage</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link font-weight-bold" href="https://ziot-systems.github.io/#features">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link font-weight-bold" href="#demoAnchor">Get Device</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link font-weight-bold" href="https://ziot-systems.github.io/customapps">Custom Applications</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link font-weight-bold" href="https://ziot-systems.github.io/blog">Blog</a>
-                </li>
-            </ul>
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#topHome">
+                <img src="https://raw.githubusercontent.com/jglatts/linear-clamp-analysis/main/logoZZNOBG.png" alt="ZIoT logo" class="me-2">
+                <div class="d-none d-md-block">
+                    <div class="fw-bold">ZIoT Systems</div>
+                    <small>Hardware + Manufacturing Software</small>
+                </div>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMain">
+                <ul class="navbar-nav ms-auto me-3">
+                    <li class="nav-item"><a class="nav-link" href="#topHome">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#linetrace">LineTrace</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hardware">Hardware</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://ziot-systems.github.io/blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#demoAnchor">Contact</a></li>
+                </ul>
+                <a class="btn cta-primary btn-sm" href="#linetrace">Explore LineTrace</a>
+            </div>
         </div>
     </nav>
 
-    <br>
-    <br>
+    <main class="container my-5" id="topHome">
+        <!-- CONTACT -->
+        <section id="demoAnchor" class="py-5 text-center">
+            <h2>Request Information</h2>
 
-    <!-- Can use a card layout for the blogs -->
-    <!-- see https://getbootstrap.com/docs/4.3/components/card/ -->
-
-    <div class="container text-center" >
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card container text-center" >
-                    <div class="card-body">
-                        <h5 class="card-title">Interfacing a ZIoT Client Device with a Custom Material Cutting CNC Machine</h5>
-                        <p class="card-text">
-                            In today’s manufacturing, the integration of IoT solutions with custom machinery has become crucial for enhancing efficiency and productivity.
-                            ZIoT Systems is proud to showcase a real-world example of how our client device was successfully interfaced with a custom material-cutting CNC machine,
-                            revolutionizing the way machine data is collected and utilized.
-                        </p>
-                        <a href="https://ziot-systems.github.io/ziot_cnc_interface" class="btn btn-primary">Learn More</a>
-                    </div>
+            <form id="contact-form" class="row g-3 justify-content-center mt-4">
+                <div class="col-md-4">
+                    <input type="text" class="form-control" name="first_name" placeholder="First Name" required>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card container text-center">
-                    <div class="card-body">
-                        <h5 class="card-title">Easy Setup - Getting Started with ZIoT Systems</h5>
-                        <p class="card-text">
-                            When it comes to IoT solutions, simplicity and ease of setup are critical for ensuring a seamless user experience. At ZIoT Systems, we’ve designed our platform
-                            with accessibility in mind, making it straightforward for users to connect, configure, and manage their devices. Whether you’re deploying one device or scaling
-                            to hundreds, setting up the ZIoT system is as simple as it gets.
-                        </p>
-                        <a href="https://ziot-systems.github.io/getting_started" class="btn btn-primary">Learn More</a>
-                    </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" name="last_name" placeholder="Last Name" required>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <br>
-    <br>
-
-    <section class="bg" id="demoAnchor">
-        <br>
-        <div class="container text-center">
-            <h2>Get Your ZIoT Device</h2>
-            <br>
-            <form id="contact-form">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="firstName">First Name</label>
-                            <input type="text" class="form-control" id="inputFirstName" name="first_name" aria-describedby="emailHelp" placeholder="First Name">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="lastNameName">Last Name</label>
-                            <input type="text" class="form-control" id="inputLastName" name="last_name" aria-describedby="emailHelp" placeholder="Last Name">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Email</label>
-                            <input type="email" class="form-control" name="user_email" id="inputEmail1" aria-describedby="emailHelp" placeholder="Email">
-                        </div>
-                    </div>
+                <div class="col-md-4">
+                    <input type="email" class="form-control" name="user_email" placeholder="Email" required>
                 </div>
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Additional Questions</label>
-                    <textarea class="form-control" id="inputTextarea1" name="message" rows="3"></textarea>
+                <div class="col-12">
+                    <textarea class="form-control" name="message" rows="4" placeholder="Additional questions"></textarea>
                 </div>
-                <input class="btn btn-primary btn-lg" type="submit" value="Send">
+                <div class="col-12">
+                    <button class="btn btn-primary btn-lg" type="submit">Send</button>
+                </div>
             </form>
-        </div>
-        <br>
-    </section>
+        </section>
 
-    <br>
-    <br>
+    </main>
 
-    <!-- Footer -->
-    <div class="container">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-            <div class="col-md-4 d-flex align-items-center">
-                <span class="mb-3 mb-md-0 text-muted">Copyright 2025 ZIoT Automation Systems</span>
-                <span class="mb-3 mb-md-0 text-muted">Warminster, PA 18974, USA</span>
+    <footer class="py-4 border-top">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+
+            <div class="text-center text-md-start">
+                <div class="small">&copy; <span id="copyYear"></span> ZIoT Systems</div>
+                <div class="small text-muted">Warminster, PA 18974, USA</div>
             </div>
 
-            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                <li class="ms-3">
-                    <a class="text-muted" href="https://www.linkedin.com/company/ziot-systems/">
-                        <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" height="26">
-                    </a>
-                </li>
-                <li class="ms-3">
-                    <a class="text-muted" href="https://www.instagram.com/ziotsystems">
-                        <img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-1024.png" height="26">
-                    </a>
-                </li>
-            </ul>
-        </footer>
-    </div>
+            <div class="d-flex gap-3">
+                <a href="https://www.linkedin.com/company/ziot-systems"
+                   target="_blank"
+                   rel="noopener"
+                   aria-label="ZIoT Systems on LinkedIn"
+                   class="text-decoration-none text-muted">
+                    <i class="bi bi-linkedin fs-5"></i>
+                </a>
 
-    <script src="{{ "/assets/js/typer.js" | relative_url }}"></script>
-    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+                <a href="https://www.instagram.com/ziotsystems"
+                   target="_blank"
+                   rel="noopener"
+                   aria-label="ZIoT Systems on Instagram"
+                   class="text-decoration-none text-muted">
+                    <i class="bi bi-instagram fs-5"></i>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', '{{ site.google_analytics }}', 'auto');
-      ga('send', 'pageview');
-    </script>
+        document.getElementById("copyYear").textContent = new Date().getFullYear();
 
+        document.getElementById("contact-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        emailjs.sendForm("service_nr6kcbi", "ziot_template", this)
+        .then(() => {
+        alert("Thank you! We will respond shortly.");
+        this.reset();
+        })
+        .catch(err => {
+        console.error("EmailJS error:", err);
+        alert("Something went wrong. Please try again.");
+        });
+        });
+    </script>
 
 </body>
 </html>
